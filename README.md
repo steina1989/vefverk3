@@ -1,3 +1,6 @@
+# Project hosted at 
+[Heroku](https://enigmatic-woodland-39980.herokuapp.com/)
+
 # Verkefni 3
 
 Útfæra skal vefþjónustu sem leyfir að skrifa, lesa, breyta og eyða minnisatriðum.
