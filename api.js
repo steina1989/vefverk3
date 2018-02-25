@@ -19,7 +19,7 @@ function sanitize(req, res, next) {
   const {
     body: {
       title = '',
-      text = '',
+      text = null,
       datetime = '',
     } = {},
   } = req;
@@ -40,6 +40,8 @@ router.use(sanitize);
 const validate = [
   check('title').isLength({ min: 1, max: 255 })
     .withMessage('Title must be a string of length 1 to 255 characters'),
+  check('text').isAlpha({ min: 0 })
+    .withMessage('Text should be a string.'),
   check('datetime').isISO8601()
     .withMessage('Datetime must be a ISO 8601 date'),
 ];
