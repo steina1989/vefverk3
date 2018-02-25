@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "eslint": "eslint *.js **/*.js --fix"
+    "eslint": "eslint *.js **/*.js"
   },
   "keywords": [],
   "author": "",
