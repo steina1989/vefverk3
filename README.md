@@ -1,5 +1,4 @@
-# Project hosted at 
-[Heroku](https://enigmatic-woodland-39980.herokuapp.com/)
+# Project hosted at [Heroku](https://enigmatic-woodland-39980.herokuapp.com/)
 
 # Verkefni 3
 
