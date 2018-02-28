@@ -98,8 +98,8 @@ router.put('/:id', validate, async (req, res) => {
 
   const id = parseInt(req.params.id, 10);
   const result = await update(id, gData);
-  if (result.success) {
-    res.status(201).json(result.rows);
+  if (result) {
+    res.status(201).json(result);
   } else {
     res.status(404).json(notfound);
   }

@@ -29,7 +29,7 @@ async function query(string, data) {
  */
 async function create({ title, text, datetime } = {}) {
   const result = await query('INSERT INTO notes (title,text,datetime) VALUES($1,$2,$3) RETURNING *', [title, text, datetime]);
-  return result.rows;
+  return result.rows[0];
 }
 
 /**
@@ -54,7 +54,7 @@ async function readOne(id) {
   if (result.rows.length === 0) {
     return null;
   }
-  return result.rows;
+  return result.rows[0];
 }
 
 /**
@@ -70,10 +70,7 @@ async function readOne(id) {
  */
 async function update(id, { title, text, datetime } = {}) {
   const result = await query('UPDATE notes SET title=($1),text=($2),datetime=($3) WHERE id = ($4) RETURNING *', [title, text, datetime, id]);
-  return {
-    success: result.rowCount === 1,
-    rows: result.rows,
-  };
+  return result.rowCount === 1 ? result.rows[0] : null;
 }
 
 /**
